@@ -1,5 +1,6 @@
 import React from "react";
 import img from "../../assets/images/treatment.png";
+import MainButton from "../Shared/MainButton";
 
 const Care = () => {
   return (
@@ -13,13 +14,9 @@ const Care = () => {
             Exceptional Dental Care On Your Terms
           </h1>
           <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsumis that it has a more-or-less normal distribution of letters,as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page
           </p>
-          <button className="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary">
-            Get Started
-          </button>
+          <MainButton>Get Started</MainButton>
         </div>
       </div>
     </div>
