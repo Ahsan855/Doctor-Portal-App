@@ -8,7 +8,7 @@ const MakeAppointment = () => {
       <div className="fexl-1 hidden lg:block">
         <img className="mt-[-110px]" src={doctor} alt="" />
       </div>
-      <div className="flex-">
+      <div className="flex-1">
         <h3 className="text-xl text-primary font-blod">Appointment</h3>
         <h2 className="text-3xl text-white pt-2">Make an Appointment Today</h2>
         <p className="text-white py-5">
