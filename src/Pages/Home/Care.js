@@ -7,7 +7,7 @@ const Care = () => {
     <div className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row">
         <div>
-        <img src={img} className="max-w-sm rounded-lg shadow-2xl" />
+        <img src={img} className="max-w-sm rounded-lg shadow-2xl" alt="" />
         </div>
         <div className="ml-10">
           <h1 className="text-5xl font-bold">

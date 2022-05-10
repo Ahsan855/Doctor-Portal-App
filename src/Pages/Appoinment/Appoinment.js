@@ -1,12 +1,16 @@
-import React from 'react';
-import AppoinmentBannar from './AppoinmentBannar';
+import React, { useState } from "react";
+import AppoinmentBannar from "./AppoinmentBannar";
+import AvailableAppoinment from "./AvailableAppoinment";
 
 const Appoinment = () => {
-    return (
-        <div>
-            <AppoinmentBannar/>
-        </div>
-    );
+  const [date, setDate] = useState(new Date());
+
+  return (
+    <div>
+      <AppoinmentBannar date={date} setDate={setDate} />
+      <AvailableAppoinment date={date} />
+    </div>
+  );
 };
 
 export default Appoinment;
