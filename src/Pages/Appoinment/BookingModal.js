@@ -25,7 +25,7 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
           </h3>
           <form
             onSubmit={handleBooing}
-            className="grid grid-cols-1 gap-4 justify-center mt-4"
+            className="grid grid-cols-1 gap-4 justify-items-center mt-4"
           >
             <input
               type="text"

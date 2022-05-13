@@ -4,9 +4,9 @@ const Service = ({ service, setTreatment }) => {
   const { name, slots } = service;
   return (
     <div className="card lg:max-w-lg bg-base-100 shadow-xl pt-5">
-      <div className="card-body">
-        <h2 className="card-title text-secondary">{name}</h2>
-        <p className="py-3">
+      <div className="card-body text-center">
+        <h2 className="text-2xl font-blod text-secondary">{name}</h2>
+        <p className="py-2">
           {slots.length > 0 ? (
             <span>{slots[0]}</span>
           ) : (
@@ -16,12 +16,12 @@ const Service = ({ service, setTreatment }) => {
         <p>
           {slots.length} {slots.length > 1 ? "Spaces" : "Space"} Available
         </p>
-        <div className="card-actions justify-items-center">
+        <div className="card-actions justify-center">
           <label
             for="booking-modal"
             disabled={slots.length === 0}
             onClick={() => setTreatment(service)}
-            className="btn btn-secondary text-white uppercase"
+            className="btn btn-sm btn-secondary text-white uppercase bg-gradient-to-r from-secondary to-primary"
           >
             Book Appointment
           </label>
