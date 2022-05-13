@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useSignInWithGoogle,
   useSignInWithEmailAndPassword,
@@ -6,7 +6,7 @@ import {
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -17,9 +17,18 @@ const Login = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+
   let signError;
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+
+  useEffect(()=>{
+navigate(from, {replace:true})
+  },[user, gUser , from, navigate])
   if (loading || gLoading) {
-    return <Loading/>
+    return <Loading />;
   }
   if (error || gError) {
     signError = (
@@ -29,6 +38,7 @@ const Login = () => {
     );
   }
   if (user || gUser) {
+    navigate(from, { replace: true });
     console.log(gUser || user);
   }
   const onSubmit = (data) => {
@@ -42,7 +52,7 @@ const Login = () => {
         <div className="card-body">
           <h2 className="text-center text-2xl font-bold">Login</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div class="form-control w-full max-w-xs">
+            <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
@@ -114,7 +124,14 @@ const Login = () => {
               value="Login"
             />
           </form>
-          <p><small>New to Doctors Portal <Link className="text-primary underline" to='/signup'>Create New Account</Link></small></p>
+          <p>
+            <small>
+              New to Doctors Portal{" "}
+              <Link className="text-primary underline" to="/signup">
+                Create New Account
+              </Link>
+            </small>
+          </p>
           <div className="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}

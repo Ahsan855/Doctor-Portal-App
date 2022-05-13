@@ -14,7 +14,7 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-  const navigate =useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
@@ -27,7 +27,9 @@ const SignUp = () => {
   if (error || gError || updateError) {
     signError = (
       <p className="text-red-500">
-        <small>{error?.message || gError?.message || updateError?.message}</small>
+        <small>
+          {error?.message || gError?.message || updateError?.message}
+        </small>
       </p>
     );
   }
@@ -37,9 +39,9 @@ const SignUp = () => {
   const onSubmit = async (data) => {
     console.log(data);
     await CreateUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({displayName: data.name})
-    console.log('update done');
-    navigate('/appointment')
+    await updateProfile({ displayName: data.name });
+    console.log("update done");
+    navigate("/appointment");
   };
   return (
     <div className="flex h-screen justify-center items-center">
@@ -47,7 +49,7 @@ const SignUp = () => {
         <div className="card-body">
           <h2 className="text-center text-2xl font-bold">Sign Up</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div class="form-control w-full max-w-xs">
+            <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
@@ -70,7 +72,7 @@ const SignUp = () => {
                 )}
               </label>
             </div>
-            <div class="form-control w-full max-w-xs">
+            <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
