@@ -24,9 +24,7 @@ const Login = () => {
 
   let from = location.state?.from?.pathname || "/";
 
-  useEffect(()=>{
-navigate(from, {replace:true})
-  },[user, gUser , from, navigate])
+  
   if (loading || gLoading) {
     return <Loading />;
   }
