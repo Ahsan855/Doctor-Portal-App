@@ -14,7 +14,6 @@ const SignUp = () => {
   const [CreateUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
   
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [token] =useToken(user || gUser)
@@ -38,7 +37,6 @@ const SignUp = () => {
     );
   }
   if (token) {
-    
     navigate("/appointment");
   }
   const onSubmit = async (data) => {
@@ -49,7 +47,7 @@ const SignUp = () => {
     
   };
   return (
-    <div className="flex h-screen justify-center items-center">
+    <div className="flex mt-20 h-screen justify-center items-center">
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="text-center text-2xl font-bold">Sign Up</h2>

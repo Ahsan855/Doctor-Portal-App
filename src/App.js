@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./Pages/About/About";
-import Appoinment from "./Pages/Appoinment/Appoinment";
 import Footer from "./Pages/Home/Footer";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
@@ -14,6 +13,9 @@ import DashBord from "./Pages/DashBord/DashBord";
 import MyAppointment from "./Pages/DashBord/MyAppointment";
 import MyReviwe from "./Pages/DashBord/MyReviwe";
 import MyHistory from "./Pages/DashBord/MyHistory";
+import Appoinment from "./Pages/Appoinment/Appointment";
+import ContactUs from "./Pages/Home/ContactUs";
+import REview from "./Pages/Home/REview";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="contact" element={<ContactUs />} />
+        <Route path="reviews" element={<REview />} />
         <Route
           path="appointment"
           element={
