@@ -15,7 +15,8 @@ import MyReviwe from "./Pages/DashBord/MyReviwe";
 import MyHistory from "./Pages/DashBord/MyHistory";
 import Appoinment from "./Pages/Appoinment/Appointment";
 import ContactUs from "./Pages/Home/ContactUs";
-import REview from "./Pages/Home/REview";
+import Review from "./Pages/Home/Review";
+
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<ContactUs />} />
-        <Route path="reviews" element={<REview />} />
+        <Route path="reviews" element={<Review />} />
         <Route
           path="appointment"
           element={
