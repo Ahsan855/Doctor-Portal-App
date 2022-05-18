@@ -13,7 +13,7 @@ const MyAppointment = () => {
       fetch(`http://localhost:5000/booking?patient=${user.email}`, {
         method: "GET",
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem("accessToken")}`,
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       })
         .then((res) => {
@@ -29,13 +29,13 @@ const MyAppointment = () => {
           setAppointment(data);
         });
     }
-  }, [user , navigate]);
+  }, [user, navigate]);
 
   return (
     <div>
       <h2>MyAppointments {appointment.length}</h2>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
             <tr>
